@@ -1,0 +1,26 @@
+This is a set of scss files to finally create a single basic style.css file for a new design project.
+you can begin with a good base
+
+to use it, you nedd to install the ruby gem named "haml" in your system.
+
+the command to the scss interpreter is:
+
+$> sass -C -t compact --watch [the/scss/main/directory/path]:[your/website/css/directory]
+
+When you clone this project you'll find tw differents folders:
+
+spleen_scss/
+  |--css/
+  |--scss/
+  
+So, the final command to work within this space qill be:
+
+$> cd [spleen_scss/directory/path]
+$> sass -C -t compact --watch scss/:css/
+
+the haml gem will "watch" for any changes to any of the .scss file and will overwrite the style.csc file in css/ folder.
+
+If you don't want to use the scss system, you can directly use the style.css file and then override it.
+
+
+

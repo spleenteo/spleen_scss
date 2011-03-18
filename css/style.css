@@ -1,0 +1,73 @@
+/* SPLEEN SCSS LIBRARY */
+/* created by spleenteo http://www.basictrading.biz */
+/********************************************/
+/* RESET BROWSER AND HTML STYLES */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+body { line-height: 1; }
+
+ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+:focus { outline: 0; }
+
+ins { text-decoration: none; }
+
+del { text-decoration: line-through; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* HTML5 RESET TO AVOID INLINE BROWSER SETTINGS */
+/********************/
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+/* GENERIC CLASSES */
+.title_font { font-family: "Georgia"; font-smooth: always; font-weight: 400; }
+
+.spleen_lib_verify:before { border: 5px solid black; content: "SPLEEN SCSS LIBRARY IS WORKING!"; color: white; text-shadow: #000 1px 1px 5px; font-size: 3em; font-family: verdana; font-weight: bold; margin: 10px; padding: 10px; display: block; background-image: url("http://basictrading.biz/download/git/spleen_scss/spleen_stripe.png"); -moz-border-radius: 10px 10px 10px 10px; /* FF1+ */ -webkit-border-radius: 10px 10px 10px 10px; /* Saf3+, Chrome */ border-radius: 10px 10px 10px 10px; /* Opera 10.5, IE 9 */ text-align: center; }
+
+.debug { border: 1px solid red; }
+
+.bg_reset { background-repeat: no-repeat; background-color: transparent; background-position: top left; }
+
+/* RESETTING BODY */
+body strong { font-weight: 600; }
+body a { text-decoration: none; }
+body a:hover { text-decoration: underline; }
+
+/* BASIC TABLE STYLE */
+/*********************/
+table { width: 100%; }
+table td, table th { padding: 5px; vertical-align: top; }
+table thead tr th { font-weight: 600; }
+table thead tr th.short { width: 10%; }
+table thead tr th.medium { width: 30%; }
+table thead tr th.long { width: 60%; }
+table .center { text-align: center; }
+table .right { text-align: right; }
+
+/* BASIC FORMS STYLE */
+/*********************/
+form fieldset label span { display: none; }
+form fieldset input, form fieldset textarea, form fieldset select { margin-bottom: 4px; }
+form fieldset div.field { padding: 5px 0; }
+form fieldset div.field .help-text { font-style: italic; }
+form fieldset div.required label { border-left: 2px solid red; }
+form fieldset div.required label:before { content: "* "; }
+form fieldset div.error label { color: red; }
+form fieldset div.error input[type="text"], form fieldset div.error input[type="password"] { border-left: 2px solid red; }
+form fieldset div.error ul.errorlist { color: red; }
+form fieldset div.error ul.errorlist li { font-style: italic; padding-left: 15px; font-size: 90%; }
+form fieldset div.error ul.errorlist li:before { display: inline; }
+form fieldset .inline { display: inline; }
+form fieldset .short { width: 30%; }
+form fieldset .medium { width: 45%; }
+
+.cms { font-size: 1em; line-height: 1.3em; }
+.cms h1 span, .cms h2 span, .cms h3 span, .cms h4 span, .cms h5 span { display: none; }
+.cms p img { margin: 5px 5px 5px 0; }
+.cms p img.right { float: right; margin: 5px 0 5px 5px; }
+.cms blockquote { font-style: italic; }
