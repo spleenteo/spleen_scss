@@ -84,6 +84,38 @@ body{
     }
 }
 
+/* Usefull classes to be used to .hide .show elements with js */
+/* .opener is the trigger to be cliccked */
+/* hider is the element contiaing the content that might be dynamically shown */
+.hider{
+    display: none;
+}
+.opener{
+    cursor: pointer;
+    &:hover{
+    };
+}
+.before_opener_commons{
+    margin-right: 4px;
+    content: "";
+    margin-right: 4px;
+    background-image: url("img/opener_arrow.png");
+    line-height: 16px;
+    padding-left: 16px;
+}
+.opener_close{
+    &:before{
+        @extend .before_opener_commons;
+        background-position: 0 0;
+    };
+}
+.opener_open{
+    &:before{
+        @extend .before_opener_commons;
+        background-position: -16px -16px;
+    };
+}
+
 @import "spaces";
 @import "tables";
 @import "forms";
