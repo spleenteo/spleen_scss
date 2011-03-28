@@ -1,0 +1,50 @@
+/* SPACES HELPS YOU TO SET MARGIN ON THE FLY */
+@mixin spaces($type, $size: 10px) {
+    // ci si aspetta queste tipologie
+    // v: per spaziature verticali
+    // h: per spaziature orizzontali
+    // hv: per enatrambe
+    
+    @if $type == v{
+        margin-top: $size;
+        margin-bottom: $size;
+    }@else if $type == h{
+        margin-left: $size;
+        margin-right: $size;
+    }@else if $type == hv{
+        margin: $size;
+    }
+}
+
+.v_10{ @include spaces(v, 10px); }
+.v_20{ @include spaces(v, 20px); }
+.v_30{ @include spaces(v, 30px); }
+.v_40{ @include spaces(v, 40px); }
+.v_50{ @include spaces(v, 50px); }
+.v_60{ @include spaces(v, 60px); }
+.v_70{ @include spaces(v, 70px); }
+.v_80{ @include spaces(v, 80px); }
+.v_90{ @include spaces(v, 90px); }
+.v_100{ @include spaces(v, 100px); }
+
+.h_10{ @include spaces(h, 10px); }
+.h_20{ @include spaces(h, 20px); }
+.h_30{ @include spaces(h, 30px); }
+.h_40{ @include spaces(h, 40px); }
+.h_50{ @include spaces(h, 50px); }
+.h_60{ @include spaces(h, 60px); }
+.h_70{ @include spaces(h, 70px); }
+.h_80{ @include spaces(h, 80px); }
+.h_90{ @include spaces(h, 90px); }
+.h_100{ @include spaces(h, 100px); }
+
+.hv_10{ @include spaces(hv, 10px); }
+.hv_20{ @include spaces(hv, 20px); }
+.hv_30{ @include spaces(hv, 30px); }
+.hv_40{ @include spaces(hv, 40px); }
+.hv_50{ @include spaces(hv, 50px); }
+.hv_60{ @include spaces(hv, 60px); }
+.hv_70{ @include spaces(hv, 70px); }
+.hv_80{ @include spaces(hv, 80px); }
+.hv_90{ @include spaces(hv, 90px); }
+.hv_100{ @include spaces(hv, 100px); }

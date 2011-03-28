@@ -38,6 +38,80 @@ body strong { font-weight: 600; }
 body a { text-decoration: none; }
 body a:hover { text-decoration: underline; }
 
+/* Usefull classes to be used to .hide .show elements with js */
+/* .opener is the trigger to be cliccked */
+/* hider is the element contiaing the content that might be dynamically shown */
+.hider { display: none; }
+
+.opener { cursor: pointer; }
+
+.before_opener_commons, .opener_close:before, .opener_open:before { margin-right: 4px; content: ""; margin-right: 4px; background-image: url("img/opener_arrow.png"); line-height: 16px; padding-left: 16px; }
+
+.opener_close:before { background-position: 0 0; }
+
+.opener_open:before { background-position: -16px -16px; }
+
+/* SPACES HELPS YOU TO SET MARGIN ON THE FLY */
+.v_10 { margin-top: 10px; margin-bottom: 10px; }
+
+.v_20 { margin-top: 20px; margin-bottom: 20px; }
+
+.v_30 { margin-top: 30px; margin-bottom: 30px; }
+
+.v_40 { margin-top: 40px; margin-bottom: 40px; }
+
+.v_50 { margin-top: 50px; margin-bottom: 50px; }
+
+.v_60 { margin-top: 60px; margin-bottom: 60px; }
+
+.v_70 { margin-top: 70px; margin-bottom: 70px; }
+
+.v_80 { margin-top: 80px; margin-bottom: 80px; }
+
+.v_90 { margin-top: 90px; margin-bottom: 90px; }
+
+.v_100 { margin-top: 100px; margin-bottom: 100px; }
+
+.h_10 { margin-left: 10px; margin-right: 10px; }
+
+.h_20 { margin-left: 20px; margin-right: 20px; }
+
+.h_30 { margin-left: 30px; margin-right: 30px; }
+
+.h_40 { margin-left: 40px; margin-right: 40px; }
+
+.h_50 { margin-left: 50px; margin-right: 50px; }
+
+.h_60 { margin-left: 60px; margin-right: 60px; }
+
+.h_70 { margin-left: 70px; margin-right: 70px; }
+
+.h_80 { margin-left: 80px; margin-right: 80px; }
+
+.h_90 { margin-left: 90px; margin-right: 90px; }
+
+.h_100 { margin-left: 100px; margin-right: 100px; }
+
+.hv_10 { margin: 10px; }
+
+.hv_20 { margin: 20px; }
+
+.hv_30 { margin: 30px; }
+
+.hv_40 { margin: 40px; }
+
+.hv_50 { margin: 50px; }
+
+.hv_60 { margin: 60px; }
+
+.hv_70 { margin: 70px; }
+
+.hv_80 { margin: 80px; }
+
+.hv_90 { margin: 90px; }
+
+.hv_100 { margin: 100px; }
+
 /* BASIC TABLE STYLE */
 /*********************/
 table { width: 100%; }
