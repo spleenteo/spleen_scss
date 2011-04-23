@@ -70,6 +70,22 @@ footer,header,hgroup,menu,nav,section {
     font-size: $size;
     @extend .special_font;
 }
+@mixin bg($color, $value: 1){
+    // this is a special mix for blac or white transparent background
+    // as IE 7/8 doesn't support rgba, the value will be replaced with a semi transparent png file
+    @if $color == "b" {
+        $img: "#{$color}#{$value}.png";
+        $c: #000;
+        background: transparent url("img/#{$img}");
+        background: rgba($c, $value) none;
+    } @else {
+        $img: "#{$color}#{$value}.png";
+        $c: #fff;
+        background: transparent url("img/#{$img}");
+        background: rgba($c, $value) none;
+
+    }
+}
 
 /* GENERIC CLASSES */
 .special_font{
