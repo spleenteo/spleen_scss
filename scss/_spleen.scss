@@ -24,8 +24,17 @@
 // your design will be gratefull!
 // ********************
 
-// set the referral name of the special font you wish to use
-$font: "Georgia";
+// set the refers name of the special font you wish to use
+// put your font into /css/fonts/ directory
+@font-face {
+    font-family: 'special';
+    src: url('fonts/Georgia.eot');
+    src: local('Georgia'), url('fonts/Georgia.ttf') format('truetype');
+}
+
+// IE 6/7/8 does not support CSS3 behaviours. PIE.htc make shadows and rounded corners possible
+// PIE.htc must be setted in absolute path
+$pie_path: "/css/PIE.htc";
 
 /* RESET BROWSER AND HTML STYLES */
     html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outline:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
@@ -42,25 +51,29 @@ footer,header,hgroup,menu,nav,section {
   box-shadow:$dist $dist $blur $color;
   -webkit-box-shadow: $dist $dist $blur $color;
   -moz-box-shadow: $dist $dist $blur $color;
+  behavior: url($pie_path);
+  
 }
 @mixin rounded($radius: 10px) {
   -moz-border-radius: $radius $radius $radius $radius; /* FF1+ */
   -webkit-border-radius: $radius $radius $radius $radius; /* Saf3+, Chrome */
-  border-radius: $radius $radius $radius $radius; /* Opera 10.5, IE 9 */  
+  border-radius: $radius $radius $radius $radius; /* Opera 10.5, IE 9 */
+  behavior: url($pie_path);
 }
 @mixin rotated($angle: 10deg) {
     -moz-transform: rotate($angle);     /* FF3.5+ */
     -o-transform: rotate($angle);       /* Opera 10.5 */
     -webkit-transform: rotate($angle);  /* Saf3.1+, Chrome */
+    behavior: url($pie_path);
 }
 @mixin specialFont($size: 10px) {
     font-size: $size;
-    @extend .title_font;
+    @extend .special_font;
 }
 
 /* GENERIC CLASSES */
-.title_font{
-    font-family: $font;
+.special_font{
+    font-family: special;
     font-smooth: always;
     font-weight: 400;
 }
