@@ -4,11 +4,11 @@
 
 // TODO there is a bug on fluid grid 3 col on margins
 
-//$type:  fixed;         /* can be fixed or fluid */
-$type: fluid;
-$width: 92%;          /* set the desired fixed width in pixel or %  */
+$type:  fixed;         /* can be fixed or fluid */
+// $type: fluid;
+$width: 960px;            /* set the desired fixed width in pixel or %  */
                         /* if you use percentage, take care to avoid to go upper then 92% to left some margin */
-$margin_fx: 2px;       /* set the margin between columns, in px for fixed layout %*/
+$margin_fx: 10px;       /* set the margin between columns, in px for fixed layout %*/
 //$margin_fl: 0.99%;      /* set the margin between columns in % for fluid */
 
 
@@ -22,17 +22,22 @@ $unit_16: $width / 16;
 
 .hive_12,
 .hive_16 {
-    margin-left: auto;
-    margin-right: auto;
     width: $width;
+    @if $type == fixed {
+        margin-left: auto;
+        margin-right: auto;
+    } @else if $type == fluid {
+        margin-left: (100% - $width)/2;
+        margin-right: (100% - $width)/2;
+    }
 }
 .cell_1, .cell_2, .cell_3, .cell_4, .cell_5, .cell_6, .cell_7, .cell_8, .cell_9, .cell_10, .cell_11, .cell_12, .cell_13, .cell_14, .cell_15, .cell_16 {
     display: inline;
     float: left;
-    position: relative;
     @if $type == fixed {
         margin-left: $margin_fx;
         margin-right: $margin_fx;
+        position: relative;
     } @else if $type == fluid {
         margin-left: 0.99%;
         margin-right: 0.99%;
@@ -71,10 +76,10 @@ $unit_16: $width / 16;
     }
 }
 .alpha {
-    margin-left: 0
+    margin-left: 0;
 }
 .omega {
-    margin-right: 0
+    margin-right: 0;
 }
 .hive_12 .cell_1 {
     @if $type == fixed {
@@ -569,4 +574,50 @@ $unit_16: $width / 16;
 }
 .clearfix {
     display: block
+}
+
+
+/* TABLETS LIKE IPAD PORTRAIT */
+@media screen and (max-width: 880px){
+   .hive_12, .hive_16{
+       padding: 10px 0;
+       width: 100% !important;
+       margin: 0;
+   }
+   .cell_12, .cell_11, .cell_10, .cell_9{
+       width: 100% !important;
+       margin: 0;
+   }
+   .cell_8, .cell_7, .cell_6, .cell_5{
+          width: 70% !important;
+          margin: 0;
+          margin-right: 2%;
+    }
+    .cell_4, .cell_3, .cell_2, .cell_1{
+        width: 28% !important;
+        margin: 0;
+        //margin-left: 0.10%;
+    }
+    .cell_12, .cell_16{
+        @for $i from 1 through 16 {
+          .cell_#{$i} { width: 100% !important; }
+        }
+    }
+}
+
+/* SETTING FOR SMARTPHONES */
+/* portrait and landscape */
+@media screen and (max-width : 620px){
+    .hive_12, .hive_16{
+        padding: 10px 0;
+        width: 100% !important;
+        margin: 0;
+    }
+    .cell_12, .cell_11, .cell_10, .cell_9, .cell_8, .cell_7, .cell_6, .cell_5, .cell_4, .cell_3, .cell_2, .cell_1{
+        width: 100% !important;
+        margin: 0;
+    }
+    .alpha, .omega{
+        margin: 0;
+    }
 }
