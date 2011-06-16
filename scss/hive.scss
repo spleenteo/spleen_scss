@@ -2,15 +2,26 @@
 /* FORKED BY THE ORIGINAL 960 GRID */
 /**********************************/
 
-$margin: 10px; /* set the margin between columns */
-$width: 960px; /* set the desired width */
+// TODO there is a bug on fluid grid 3 col on margins
+
+//$type:  fixed;         /* can be fixed or fluid */
+$type: fluid;
+$width: 92%;          /* set the desired fixed width in pixel or %  */
+                        /* if you use percentage, take care to avoid to go upper then 92% to left some margin */
+$margin_fx: 2px;       /* set the margin between columns, in px for fixed layout %*/
+//$margin_fl: 0.99%;      /* set the margin between columns in % for fluid */
 
 
-// WARNING: Internal variables, don't change it!
+
+/*
+ * WARNING: Internal variables, don't change it!
+ * these are assumed to modify margin in fixed layout
+ */
 $unit_12: $width / 12;
 $unit_16: $width / 16;
 
-.hive_12, .hive_16 {
+.hive_12,
+.hive_16 {
     margin-left: auto;
     margin-right: auto;
     width: $width;
@@ -19,21 +30,45 @@ $unit_16: $width / 16;
     display: inline;
     float: left;
     position: relative;
-    margin-left: $margin;
-    margin-right: $margin;
+    @if $type == fixed {
+        margin-left: $margin_fx;
+        margin-right: $margin_fx;
+    } @else if $type == fluid {
+        margin-left: 0.99%;
+        margin-right: 0.99%;
+    }
 }
-.hive_12 .cell_3, .hive_16 .cell_4 {
-    width: ($unit_16 * 4) - ($margin * 2);
+.hive_12 .cell_3,
+.hive_16 .cell_4 {
+    @if $type == fixed {
+        width: ($unit_16 * 4) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 23%;
+    }
 }
-.hive_12 .cell_6, .hive_16 .cell_8 {
-    width: ($unit_16 * 8) - ($margin * 2);
+.hive_12 .cell_6,
+.hive_16 .cell_8 {
+    @if $type == fixed {
+        width: ($unit_16 * 8) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 48%;
+    }
 }
-.hive_12 .cell_9, .hive_16 .cell_12 {
-    width: ($unit_16 * 12) - ($margin * 2);
-    
+.hive_12 .cell_9,
+.hive_16 .cell_12 {
+    @if $type == fixed {
+        width: ($unit_16 * 12) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 73%;
+    }
 }
-.hive_12 .cell_12, .hive_16 .cell_16 {
-    width: ($unit_16 * 16) - ($margin * 2);
+.hive_12 .cell_12,
+.hive_16 .cell_16 {
+    @if $type == fixed {
+        width: ($unit_16 * 16) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 98%;
+    }
 }
 .alpha {
     margin-left: 0
@@ -42,340 +77,472 @@ $unit_16: $width / 16;
     margin-right: 0
 }
 .hive_12 .cell_1 {
-    width: ($unit_12 * 1) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_12 * 1) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 6.333%;
+    }
 }
 .hive_12 .cell_2 {
-    width: ($unit_12 * 2) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_12 * 2) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 14.666%;
+    }
 }
 .hive_12 .cell_4 {
-    width: ($unit_12 * 4) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_12 * 4) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 31.333%;
+    }
 }
 .hive_12 .cell_5 {
-    width: ($unit_12 * 5) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_12 * 5) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 39.666%;
+    }
 }
 .hive_12 .cell_7 {
-    width: ($unit_12 * 7) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_12 * 7) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 56.333%;
+    }
 }
 .hive_12 .cell_8 {
-    width: ($unit_12 * 8) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_12 * 8) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 64.666%;
+    }
 }
 .hive_12 .cell_10 {
-    width: ($unit_12 * 10) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_12 * 10) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 81.333%;
+    }
 }
 .hive_12 .cell_11 {
-    width: ($unit_12 * 11) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_12 * 11) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 89.666%;
+    }
 }
 .hive_16 .cell_1 {
-    width: ($unit_16 * 1) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_16 * 1) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 4.25%;
+    }
 }
 .hive_16 .cell_2 {
-    width: ($unit_16 * 2) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_16 * 2) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 10.5%;
+    }
 }
 .hive_16 .cell_3 {
-    width: ($unit_16 * 3) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_16 * 3) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 16.75%;
+    }
 }
 .hive_16 .cell_5 {
-    width: ($unit_16 * 5) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_16 * 5) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 29.25%;
+    }
 }
 .hive_16 .cell_6 {
-    width: ($unit_16 * 6) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_16 * 6) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 35.5%;
+    }
 }
 .hive_16 .cell_7 {
-    width: ($unit_16 * 7) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_16 * 7) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 41.75%;
+    }
 }
 .hive_16 .cell_9 {
-    width: ($unit_16 * 9) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_16 * 9) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 54.25%;
+    }
 }
 .hive_16 .cell_10 {
-    width: ($unit_16 * 10) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_16 * 10) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 60.5%;
+    }
 }
 .hive_16 .cell_11 {
-    width: ($unit_16 * 11) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_16 * 11) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 66.75%;
+    }
 }
 .hive_16 .cell_13 {
-    width: ($unit_16 * 13) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_16 * 13) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 79.25%;
+    }
 }
 .hive_16 .cell_14 {
-    width: ($unit_16 * 14) - ($margin * 2);
+    @if $type == fixed {
+        width: ($unit_16 * 14) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 85.5%;
+    }
 }
 .hive_16 .cell_15 {
-    width: ($unit_16 * 15) - ($margin * 2);
-}
-.hive_12.pre_3, .hive_16.pre_4 {
-    padding-left: ($unit_16 * 4);
-}
-.hive_12.pre_6, .hive_16.pre_8 {
-    padding-left: ($unit_16 * 8);
-}
-.hive_12.pre_9, .hive_16.pre_12 {
-    padding-left: ($unit_16 * 12);
-}
-.hive_12.pre_1 {
-    padding-left: ($unit_12 * 1);
-}
-.hive_12.pre_2 {
-    padding-left: ($unit_12 * 2);
-}
-.hive_12.pre_4 {
-    padding-left: ($unit_12 * 4);
-}
-.hive_12.pre_5 {
-    padding-left: ($unit_12 * 5);
-}
-.hive_12.pre_7 {
-    padding-left: ($unit_12 * 7);
-}
-.hive_12.pre_8 {
-    padding-left: ($unit_12 * 8);
-}
-.hive_12.pre_10 {
-    padding-left: ($unit_12 * 10);
-}
-.hive_12.pre_11 {
-    padding-left: ($unit_12 * 11);
-}
-.hive_16.pre_1 {
-    padding-left: ($unit_16 * 1);
-}
-.hive_16.pre_2 {
-    padding-left: ($unit_16 * 2);
-}
-.hive_16.pre_3 {
-    padding-left: ($unit_16 * 3);
-}
-.hive_16.pre_5 {
-    padding-left: ($unit_16 * 5);
-}
-.hive_16.pre_6 {
-    padding-left: ($unit_16 * 6);
-}
-.hive_16.pre_7 {
-    padding-left: ($unit_16 * 7);
-}
-.hive_16.pre_9 {
-    padding-left: ($unit_16 * 9);
-}
-.hive_16.pre_10 {
-    padding-left: ($unit_16 * 10);
-}
-.hive_16.pre_11 {
-    padding-left: ($unit_16 * 11);
-}
-.hive_16.pre_13 {
-    padding-left: ($unit_16 * 13);
-}
-.hive_16.pre_14 {
-    padding-left: ($unit_16 * 14);
-}
-.hive_16.pre_15 {
-    padding-left: ($unit_16 * 15);
-}
-.hive_12.post_3, .hive_16.post_4 {
-    padding-right: ($unit_16 * 4);
-}
-.hive_12.post_6, .hive_16.post_8 {
-    padding-right: ($unit_16 * 8);
-}
-.hive_12.post_9, .hive_16.post_12 {
-    padding-right: ($unit_16 * 12);
-}
-.hive_12.post_1 {
-    padding-right: ($unit_12 * 1);
-}
-.hive_12.post_2 {
-    padding-right: ($unit_12 * 2);
-}
-.hive_12.post_4 {
-    padding-right: ($unit_12 * 4);
-}
-.hive_12.post_5 {
-    padding-right: ($unit_12 * 5);
-}
-.hive_12.post_7 {
-    padding-right: ($unit_12 * 7);
-}
-.hive_12.post_8 {
-    padding-right: ($unit_12 * 8);
-}
-.hive_12.post_10 {
-    padding-right: ($unit_12 * 10);
-}
-.hive_12.post_11 {
-    padding-right: ($unit_12 * 11);
-}
-.hive_16.post_1 {
-    padding-right: ($unit_16 * 1);
-}
-.hive_16.post_2 {
-    padding-right: ($unit_16 * 2);
-}
-.hive_16.post_3 {
-    padding-right: ($unit_16 * 3);
-}
-.hive_16.post_5 {
-    padding-right: ($unit_16 * 5);
-}
-.hive_16.post_6 {
-    padding-right: ($unit_16 * 6);
-}
-.hive_16.post_7 {
-    padding-right: ($unit_16 * 7);
-}
-.hive_16.post_9 {
-    padding-right: ($unit_16 * 9);
-}
-.hive_16.post_10 {
-    padding-right: ($unit_16 * 10);
-}
-.hive_16.post_11 {
-    padding-right: ($unit_16 * 11);
-}
-.hive_16.post_13 {
-    padding-right: ($unit_16 * 13);
-}
-.hive_16.post_14 {
-    padding-right: ($unit_16 * 14);
-}
-.hive_16.post_15 {
-    padding-right: ($unit_16 * 15);
-}
-.hive_12.slide_3, .hive_16.slide_4 {
-    left: ($unit_16 * 4);
-}
-.hive_12.slide_6, .hive_16.slide_8 {
-    left: ($unit_16 * 8);
-}
-.hive_12.slide_9, .hive_16.slide_12 {
-    left: ($unit_16 * 12);
-}
-.hive_12.slide_1 {
-    left: ($unit_12 * 1);
-}
-.hive_12.slide_2 {
-    left: ($unit_12 * 2);
-}
-.hive_12.slide_4 {
-    left: ($unit_12 * 4);
-}
-.hive_12.slide_5 {
-    left: ($unit_12 * 5);
-}
-.hive_12.slide_7 {
-    left: ($unit_12 * 7);
-}
-.hive_12.slide_8 {
-    left: ($unit_12 * 8);
-}
-.hive_12.slide_10 {
-    left: ($unit_12 * 10);
-}
-.hive_12.slide_11 {
-    left: ($unit_12 * 11);
-}
-.hive_16.slide_1 {
-    left: ($unit_16 * 1);
-}
-.hive_16.slide_2 {
-    left: ($unit_16 * 2);
-}
-.hive_16.slide_3 {
-    left: ($unit_16 * 3);
-}
-.hive_16.slide_5 {
-    left: ($unit_16 * 5);
-}
-.hive_16.slide_6 {
-    left: ($unit_16 * 6);
-}
-.hive_16.slide_7 {
-    left: ($unit_16 * 7);
-}
-.hive_16.slide_9 {
-    left: ($unit_16 * 9);
-}
-.hive_16.slide_10 {
-    left: ($unit_16 * 10);
-}
-.hive_16.slide_11 {
-    left: ($unit_16 * 11);
-}
-.hive_16.slide_13 {
-    left: ($unit_16 * 13);
-}
-.hive_16.slide_14 {
-    left: ($unit_16 * 14);
-}
-.hive_16.slide_15 {
-    left: ($unit_16 * 15);
-}
-.hive_12.pull_3, .hive_16.pull_4 {
-    left: ($unit_16 * 4) * -1;
-}
-.hive_12.pull_6, .hive_16.pull_8 {
-    left: ($unit_16 * 8) * -1;
-}
-.hive_12.pull_9, .hive_16.pull_12 {
-    left: ($unit_16 * 12) * -1;
-}
-.hive_12.pull_1 {
-    left: ($unit_12 * 1) * -1;
-}
-.hive_12.pull_2 {
-    left: ($unit_12 * 2) * -1;
-}
-.hive_12.pull_4 {
-    left: ($unit_12 * 4) * -1;
-}
-.hive_12.pull_5 {
-    left: ($unit_12 * 5) * -1;
-}
-.hive_12.pull_7 {
-    left: ($unit_12 * 7) * -1;
-}
-.hive_12.pull_8 {
-    left: ($unit_12 * 8) * -1;
-}
-.hive_12.pull_10 {
-    left: ($unit_12 * 10) * -1;
-}
-.hive_12.pull_11 {
-    left: ($unit_12 * 11) * -1;
-}
-.hive_16.pull_1 {
-    left: ($unit_16 * 1) * -1;
-}
-.hive_16.pull_2 {
-    left: ($unit_16 * 2) * -1;
-}
-.hive_16.pull_3 {
-    left: ($unit_16 * 3) * -1;
-}
-.hive_16.pull_5 {
-    left: ($unit_16 * 5) * -1;
-}
-.hive_16.pull_6 {
-    left: ($unit_16 * 6) * -1;
-}
-.hive_16.pull_7 {
-    left: ($unit_16 * 7) * -1;
-}
-.hive_16.pull_9 {
-    left: ($unit_16 * 9) * -1;
-}
-.hive_16.pull_10 {
-    left: ($unit_16 * 10) * -1;
-}
-.hive_16.pull_11 {
-    left: ($unit_16 * 11) * -1;
-}
-.hive_16.pull_13 {
-    left: ($unit_16 * 13) * -1;
-}
-.hive_16.pull_14 {
-    left: ($unit_16 * 14) * -1;
-}
-.hive_16.pull_15 {
-    left: ($unit_16 * 15) * -1;
+    @if $type == fixed {
+        width: ($unit_16 * 15) - ($margin_fx * 2);
+    } @else if $type == fluid {
+        width: 91.75%;
+    }
+}
+.hive_12 .pre_3,
+.hive_16 .pre_4 {
+    @if $type == fixed {
+        padding-left: ($unit_16 * 4);
+    } @else if $type == fluid {
+        padding-left: 25%;
+    }
+}
+.hive_12 .pre_6,
+.hive_16 .pre_8 {
+    @if $type == fixed {
+        padding-left: ($unit_16 * 8);
+    } @else if $type == fluid {
+        padding-left: 50%;
+    }
+}
+.hive_12 .pre_9,
+.hive_16 .pre_12 {
+    @if $type == fixed {
+        padding-left: ($unit_16 * 12);
+    } @else if $type == fluid {
+        padding-left: 75%;
+    }
+}
+.hive_12 .pre_1 {
+    @if $type == fixed {
+        padding-left: ($unit_12 * 1);
+    } @else if $type == fluid {
+        padding-left: 8.333%;
+    }
+}
+.hive_12 .pre_2 {
+    @if $type == fixed {
+        padding-left: ($unit_12 * 2);
+    } @else if $type == fluid {
+        padding-left: 16.666%;
+    }
+}
+.hive_12 .pre_4 {
+    @if $type == fixed {
+        padding-left: ($unit_12 * 4);
+    } @else if $type == fluid {
+        padding-left: 33.333%;
+    }
+}
+.hive_12 .pre_5 {
+    @if $type == fixed {
+        padding-left: ($unit_12 * 5);
+    } @else if $type == fluid {
+        padding-left: 41.666%;
+    }
+}
+.hive_12 .pre_7 {
+    @if $type == fixed {
+        padding-left: ($unit_12 * 7);
+    } @else if $type == fluid {
+        padding-left: 58.333%;
+    }
+}
+.hive_12 .pre_8 {
+    @if $type == fixed {
+        padding-left: ($unit_12 * 8);
+    } @else if $type == fluid {
+        padding-left: 66.666%;
+    }
+}
+.hive_12 .pre_10 {
+    @if $type == fixed {
+        padding-left: ($unit_12 * 10);
+    } @else if $type == fluid {
+        padding-left: 83.333%;
+    }
+}
+.hive_12 .pre_11 {
+    @if $type == fixed {
+        padding-left: ($unit_12 * 11);
+    } @else if $type == fluid {
+        padding-left: 91.666%;
+    }
+}
+.hive_16 .pre_1 {
+    @if $type == fixed {
+        padding-left: ($unit_16 * 1);
+    } @else if $type == fluid {
+        padding-left: 8.333%;
+    }
+}
+.hive_16 .pre_2 {
+    @if $type == fixed {
+        padding-left: ($unit_16 * 2);
+    } @else if $type == fluid {
+        padding-left: 12.5%;
+    }
+}
+.hive_16 .pre_3 {
+    @if $type == fixed {
+        padding-left: ($unit_16 * 3);
+    } @else if $type == fluid {
+        padding-left: 18.75%;
+    }
+}
+.hive_16 .pre_5 {
+    @if $type == fixed {
+        padding-left: ($unit_16 * 5);
+    } @else if $type == fluid {
+        padding-left: 31.25%;
+    }
+}
+.hive_16 .pre_6 {
+    @if $type == fixed {
+        padding-left: ($unit_16 * 6);
+    } @else if $type == fluid {
+        padding-left: 37.5%;
+    }
+}
+.hive_16 .pre_7 {
+    @if $type == fixed {
+        padding-left: ($unit_16 * 7);
+    } @else if $type == fluid {
+        padding-left: 43.75%;
+    }
+}
+.hive_16 .pre_9 {
+    @if $type == fixed {
+        padding-left: ($unit_16 * 9);
+    } @else if $type == fluid {
+        padding-left: 56.25%;
+    }
+}
+.hive_16 .pre_10 {
+    @if $type == fixed {
+        padding-left: ($unit_16 * 10);
+    } @else if $type == fluid {
+        padding-left: 62.5%;
+    }
+}
+.hive_16 .pre_11 {
+    @if $type == fixed {
+        padding-left: ($unit_16 * 11);
+    } @else if $type == fluid {
+        padding-left: 68.75%;
+    }
+}
+.hive_16 .pre_13 {
+    @if $type == fixed {
+        padding-left: ($unit_16 * 13);
+    } @else if $type == fluid {
+        padding-left: 81.25%;
+    }
+}
+.hive_16 .pre_14 {
+    @if $type == fixed {
+        padding-left: ($unit_16 * 14);
+    } @else if $type == fluid {
+        padding-left: 87.5%;
+    }
+}
+.hive_16 .pre_15 {
+    @if $type == fixed {
+        padding-left: ($unit_16 * 15);
+    } @else if $type == fluid {
+        padding-left: 93.75%;
+    }
+}
+.hive_12 .post_3,
+.hive_16 .post_4 {
+    @if $type == fixed {
+        padding-right: ($unit_16 * 4);
+    } @else if $type == fluid {
+        padding-right: 25%;
+    }
+}
+.hive_12 .post_6,
+.hive_16 .post_8 {
+    @if $type == fixed {
+        padding-right: ($unit_16 * 8);
+    } @else if $type == fluid {
+        padding-right: 50%;
+    }
+}
+.hive_12 .post_9,
+.hive_16 .post_12 {
+    @if $type == fixed {
+        padding-right: ($unit_16 * 12);
+    } @else if $type == fluid {
+        padding-right: 75%;
+    }
+}
+.hive_12 .post_1 {
+    @if $type == fixed {
+        padding-right: ($unit_12 * 1);
+    } @else if $type == fluid {
+        padding-right: 8.333%;
+    }
+}
+.hive_12 .post_2 {
+    @if $type == fixed {
+        padding-right: ($unit_12 * 2);
+    } @else if $type == fluid {
+        padding-right: 16.666%;
+    }
+}
+.hive_12 .post_4 {
+    @if $type == fixed {
+        padding-right: ($unit_12 * 4);
+    } @else if $type == fluid {
+        padding-right: 33.333%;
+    }
+}
+.hive_12 .post_5 {
+    @if $type == fixed {
+        padding-right: ($unit_12 * 5);
+    } @else if $type == fluid {
+        padding-right: 41.666%;
+    }
+}
+.hive_12 .post_7 {
+    @if $type == fixed {
+        padding-right: ($unit_12 * 7);
+    } @else if $type == fluid {
+        padding-right: 58.333%;
+    }
+}
+.hive_12 .post_8 {
+    @if $type == fixed {
+        padding-right: ($unit_12 * 8);
+    } @else if $type == fluid {
+        padding-right: 66.666%;
+    }
+}
+.hive_12 .post_10 {
+    @if $type == fixed {
+        padding-right: ($unit_12 * 10);
+    } @else if $type == fluid {
+        padding-right: 83.333%;
+    }
+}
+.hive_12 .post_11 {
+    @if $type == fixed {
+        padding-right: ($unit_12 * 11);
+    } @else if $type == fluid {
+        padding-right: 91.666%;
+    }
+}
+.hive_16 .post_1 {
+    @if $type == fixed {
+        padding-right: ($unit_16 * 1);
+    } @else if $type == fluid {
+        padding-right: 6.25%;
+    }
+}
+.hive_16 .post_2 {
+    @if $type == fixed {
+        padding-right: ($unit_16 * 2);
+    } @else if $type == fluid {
+        padding-right: 16.5%;
+    }
+}
+.hive_16 .post_3 {
+    @if $type == fixed {
+        padding-right: ($unit_16 * 3);
+    } @else if $type == fluid {
+        padding-right: 18.75%;
+    }
+}
+.hive_16 .post_5 {
+    @if $type == fixed {
+        padding-right: ($unit_16 * 5);
+    } @else if $type == fluid {
+        padding-right: 31.25%;
+    }
+}
+.hive_16 .post_6 {
+    @if $type == fixed {
+        padding-right: ($unit_16 * 6);
+    } @else if $type == fluid {
+        padding-right: 37.5%;
+    }
+}
+.hive_16 .post_7 {
+    @if $type == fixed {
+        padding-right: ($unit_16 * 7);
+    } @else if $type == fluid {
+        padding-right: 43.75%;
+    }
+}
+.hive_16 .post_9 {
+    @if $type == fixed {
+        padding-right: ($unit_16 * 9);
+    } @else if $type == fluid {
+        padding-right: 56.25%;
+    }
+}
+.hive_16 .post_10 {
+    @if $type == fixed {
+        padding-right: ($unit_16 * 10);
+    } @else if $type == fluid {
+        padding-right: 62.5%;
+    }
+}
+.hive_16 .post_11 {
+    @if $type == fixed {
+        padding-right: ($unit_16 * 11);
+    } @else if $type == fluid {
+        padding-right: 68.75%;
+    }
+}
+.hive_16 .post_13 {
+    @if $type == fixed {
+        padding-right: ($unit_16 * 13);
+    } @else if $type == fluid {
+        padding-right: 81.25%;
+    }
+}
+.hive_16 .post_14 {
+    @if $type == fixed {
+        padding-right: ($unit_16 * 14);
+    } @else if $type == fluid {
+        padding-right: 87.5%;
+    }
+}
+.hive_16 .post_15 {
+    @if $type == fixed {
+        padding-right: ($unit_16 * 15);
+    } @else if $type == fluid {
+        padding-right: 93.75%;
+    }
 }
 .clear {
     clear: both;
