@@ -1,10 +1,11 @@
-== SpleenScss
+= SpleenScss =
 
-Questa libreria permette di scrivere il markup html applicando le classi di un sistema grid css. Si ispira al famoso 960grid. E' stata modificata la metafora delle container/grid di 960grid in favore di una hive/cells (alveare/cella) essendo questo sistema più flessibile e adattabile a varie esigenze.
+Questa libreria permette di scrivere il markup html applicando le classi di un sistema grid css. Si ispira al famoso '''960grid'''. E' stata modificata la metafora delle container/grid di 960grid in favore di una hive/cells (alveare/cella) essendo questo sistema più flessibile e adattabile a varie esigenze.
 
 Questo insieme di file scss/css/html/haml/js nasce per agevolare l'inizio di un nuovo sito facilitandone la scrittura del markup e sfruttando al potenza e la pulizia dell'scss (http://sass-lang.com/).
-Prende spunto dal sistema 960grid e 960grid fluid. Questi sono stati accorpati e convertiti in formato scss e sono stati parametrizzati in modo tale da poter scegliere alcuni attributi quali:
+Prende spunto dal sistema 960grid e 960grid fluid. Questi sono stati accorpati e convertiti in formato scss e sono stati parametrizzati in modo tale da poter scegliere alcuni attributi.
 
+=== Attributi ===
 * la dimensione fissa in px (non solo 960px)
 * il margine tra una colonna e l'altra che può essere diverso da 10px
 * la scelta tra un sistema fisso oppure fludio con una percentuale variabile
