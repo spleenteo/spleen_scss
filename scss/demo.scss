@@ -1,0 +1,31 @@
+body{
+    font-family: "lucida grande", Tahoma, Verdana;
+    font-size: 0.7em;
+    line-height: 1.2em;
+    color: #403d3d;
+    
+    header{
+        h1{
+            font-size: 2em;
+            padding: 5px 0;
+            margin-bottom: 10px;
+        }
+    }
+    nav{
+        ul{
+            li{
+                display: inline-block;;
+                margin-right: 20px;
+            }
+        }
+    }
+}
+header, nav, section, article, aside{
+    background-color: #eee;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+
+
