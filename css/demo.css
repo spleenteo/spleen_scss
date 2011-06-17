@@ -1,5 +1,12 @@
-body { font-family: "lucida grande", Tahoma, Verdana; font-size: 0.7em; line-height: 1.2em; color: #403d3d; }
+body { font-family: "lucida grande", Tahoma, Verdana; font-size: 0.7em; color: #403d3d; }
 body header h1 { font-size: 2em; padding: 5px 0; margin-bottom: 10px; }
 body nav ul li { display: inline-block; margin-right: 20px; }
+body article { line-height: 1.4em; }
+body article ul { margin: 10px; padding-left: 20px; }
+body article ul li { padding: 5px 5px 5px 15px; list-style: circle; }
 
 header, nav, section, article, aside { background-color: #eee; padding: 10px; border: 1px solid #ccc; margin-top: 10px; }
+
+p { line-height: 1.94em; }
+
+@media screen and (max-width : 620px) { nav ul li { display: block; width: 100%; padding: 5px 0; border-bottom: 1px dotted gray; } }
