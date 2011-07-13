@@ -1,3 +1,7 @@
+.debug { border: 1px solid red; }
+
+.bg_reset { background-repeat: no-repeat; background-color: transparent; background-position: top left; }
+
 body { font-family: "lucida grande", Tahoma, Verdana; font-size: 0.7em; color: #403d3d; }
 body header h1 { font-size: 2em; padding: 5px 0; margin-bottom: 10px; }
 body nav ul li { display: inline-block; margin-right: 20px; }
