@@ -1,4 +1,51 @@
-@import "commons";
-@import "colors"; // the main color palette
+@import "spleen"; 	// the spleenscss library
+@import "commons"; 	// common mixin and classes
+@import "colors"; 	// the main color palette
+
 
 // let's start your new clean stylesheet!
+/* GENERIC STYLED FOR OUTLINE AND VERY OLD BROWSERS */
+/**********************************/
+
+/* END GENERIC STYLED FOR OUTLINE AND VERY OLD BROWSERS  */
+
+
+/* MEDIA QUERIES STATEMENTS */
+/**********************************/
+/* smaller then 480 (SMARTPHONES PORTRAIT) */
+@media only screen and (max-width: 480px){
+	
+}
+
+/* between 480 and 1000 (SMARTPHONES LANDSCAPE) */
+@media only screen and (min-width: 481px) and (max-width: 1000px){
+	
+}
+
+/* smaller then 720 */
+@media only screen and (max-width: 1000px){
+	
+}
+
+
+/* over 1000px (DESKTOP OR TABLETS LANDSCAPE AND CINEMA DISPLAY) */
+@media only screen and (min-width: 1000px){
+}
+
+
+/* between 1000 and 1500 (DESKTOP OR TABLETS LANDSCAPE) */
+@media only screen and (min-width: 1000px) and (max-width: 1499px){
+
+}
+
+/* over 1500 (WEB TV CINEMA DISPLAY) */
+@media screen and (min-width: 1500px) {
+
+}
+
+
+/* END MEDIA QUERIES STATEMENTS  */
+
+
+
+

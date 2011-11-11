@@ -1,4 +1,4 @@
-/* this is just a template for various breaks for different devices and views */
+// this is just a template for 4 breaks for different devices and views
 
 /* smaller then 480 (SMARTPHONES PORTRAIT) */
 @media only screen and (max-width: 480px){
@@ -11,8 +11,13 @@
 }
 
 /* smaller then 720 */
-@media only screen and (min-width: 481px) and (max-width: 1000px){
+@media only screen and (max-width: 1000px){
 	
+}
+
+
+/* over 1000px (DESKTOP OR TABLETS LANDSCAPE AND CINEMA DISPLAY) */
+@media only screen and (min-width: 1000px){
 }
 
 
