@@ -2,10 +2,14 @@
 /* created by spleenteo http://www.basictrading.biz */
 /********************************************/
 /* SPLEENCSS COMMONS contains mixins, extentions and generic classes */
+/**********************************/
+/* TYPOGRAPHY */
 /* classes to be used es extentions with @extend [class_name] the EXT_ prefix will help ti make css code more readable Extensions should be used in scss/sass file only, not in the markup */
 .EXT_border_reset { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
 
 .EXT_bg_reset { background-repeat: no-repeat; background-color: transparent; background-position: top left; }
+
+.EXT_ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* here some generic classes these classes can be used in html markup */
 .debug { border: 1px solid red; }
@@ -84,10 +88,14 @@ $cTitles: $cBlue;
 $cSectionBox: $cGreyLight;
 */
 /* SPLEENCSS COMMONS contains mixins, extentions and generic classes */
+/**********************************/
+/* TYPOGRAPHY */
 /* classes to be used es extentions with @extend [class_name] the EXT_ prefix will help ti make css code more readable Extensions should be used in scss/sass file only, not in the markup */
 .EXT_border_reset { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
 
 .EXT_bg_reset { background-repeat: no-repeat; background-color: transparent; background-position: top left; }
+
+.EXT_ellipsis { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* here some generic classes these classes can be used in html markup */
 .debug { border: 1px solid red; }

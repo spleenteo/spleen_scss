@@ -4,15 +4,18 @@
  */
 
 // MIXINS
+/**********************************/
+
+// BOX
 @mixin shadow($dist: 10px, $blur: 10px, $color: #000) {
-  box-shadow:$dist $dist $blur $color;  
-  -webkit-box-shadow: $dist $dist $blur $color;
-  -moz-box-shadow: $dist $dist $blur $color;
+    box-shadow:$dist $dist $blur $color;  
+    -webkit-box-shadow: $dist $dist $blur $color;
+    -moz-box-shadow: $dist $dist $blur $color;
 }
 @mixin rounded($radius: 10px) {
-  -moz-border-radius: $radius $radius $radius $radius;
-  -webkit-border-radius: $radius $radius $radius $radius;
-  border-radius: $radius $radius $radius $radius;
+    -moz-border-radius: $radius $radius $radius $radius;
+    -webkit-border-radius: $radius $radius $radius $radius;
+    border-radius: $radius $radius $radius $radius;
 }
 @mixin rotated($angle: 10deg, $oX: "top", $oY: "left") {
     -moz-transform: rotate($angle);
@@ -24,10 +27,6 @@
     -ms-transform: rotate($angle);
     -ms-transform-origin: $oY $oX;
 }
-@mixin specialFont($size: 10px) {
-    font-size: $size;
-    @extend .special_font;
-}
 @mixin animate($t: 1s){
     -webkit-transition: all $t ease-in-out;
     -moz-transition: all $t ease-in-out;
@@ -35,12 +34,18 @@
     -ms-transition: all $t ease-in-out;
 }
 @mixin animation_config($duration: 1s, $delay: 1s, $loop: infinite) {
-  -moz-animation-duration: $duration;
-  -moz-animation-delay: $delay;
-  -moz-animation-iteration-count: $loop;
-  -webkit-animation-duration: $duration;
-  -webkit-animation-delay: $delay;
-  -webkit-animation-iteration-count: $loop;
+    -moz-animation-duration: $duration;
+    -moz-animation-delay: $delay;
+    -moz-animation-iteration-count: $loop;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-delay: $delay;
+    -webkit-animation-iteration-count: $loop;
+}
+
+/* TYPOGRAPHY */
+@mixin specialFont($size: 1em) {
+    font-size: $size;
+    @extend .special_font;
 }
 @mixin columns($number: 2, $gap: 20px){
     -moz-column-count: $number;
@@ -50,6 +55,65 @@
     column-count: $number;
     column-gap: $gap;
 }
+@mixin text_shadow($color, $x: 1px, $y: 1px, $blur: 1px) {
+  @if $color == none {
+    text-shadow: none;
+  }
+  @else {
+    text-shadow: $color $x $v $blur;
+  }
+}
+@mixin link($normal, $hover: false, $active: false, $visited: false, $focus: false) {
+    color: $normal;
+    &:active{
+        outline: none;
+    }
+    @if $visited {
+        &:visited {
+            color: $visited;
+        }
+    }
+    @if $focus {
+        &:focus {
+            color: $focus;
+        }
+    }
+    @if $hover {
+        &:hover {
+            color: $hover;
+        }
+    }
+    @if $active {
+        &:active {
+            color: $active;
+        }
+    }
+}
+@mixin delimited_list($separator: ", ") {
+    li {
+        display: inline;
+        list-style-type: none;
+        margin: 0px;
+        padding: 0px;
+        &:after {
+            content: $separator;
+        }
+        &:last-child {
+            &:after {
+                content: "";
+            }
+        }
+        &.last {
+            &:after {
+                content: ""; 
+            }
+        }
+    }
+}
+
+
+
+
 
 
 /*
@@ -66,6 +130,11 @@
   background-repeat: no-repeat;
   background-color: transparent;
   background-position: top left;
+}
+.EXT_ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 
