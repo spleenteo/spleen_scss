@@ -101,7 +101,15 @@ $cSectionBox: $cGreyLight;
 .clearfix { display: block; }
 
 .cms { font-size: 1em; line-height: 1.5em; }
+.cms h1, .cms h2, .cms h3, .cms h4, .cms h5 { margin: .5em 0 .5em 0; }
 .cms h1 span, .cms h2 span, .cms h3 span, .cms h4 span, .cms h5 span { display: none; }
+.cms h1 { font-size: 1.5em; }
+.cms h2 { font-size: 1.3em; }
+.cms h3 { font-size: 1.1em; }
 .cms p img { margin: 5px 5px 5px 0; }
 .cms p img.right { float: right; margin: 5px 0 5px 5px; }
-.cms blockquote { font-style: italic; padding: 2em 0 2em 2em; }
+.cms ul, .cms ol { margin: 1em 3em; }
+.cms ul { list-style: disc; }
+.cms ul li { line-height: 1.5em; }
+.cms blockquote { font-style: italic; padding: .5em 3em; }
+.cms pre { line-height: 1.2em; font-size: 1.1em; font-family: "Courier New", Courier, monospace; margin: .5 0; padding-left: 2em; }

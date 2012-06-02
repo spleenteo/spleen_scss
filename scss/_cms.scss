@@ -4,19 +4,21 @@
 .cms{
     font-size: 1em;
     line-height: 1.5em;
+
     h1, h2, h3, h4, h5{
+        margin: .5em 0 .5em 0;
         span{
             display: none;
         }
     }
     h1{
-
+        font-size: 1.5em;
     }
     h2{
-        
+        font-size: 1.3em;        
     }
     h3{
-        
+        font-size: 1.1em;        
     }
     p{
         img{
@@ -36,6 +38,7 @@
         }
     }
     ul, ol{
+        margin: 1em 3em;
         li{
             a{
                 &:hover{
@@ -45,7 +48,10 @@
         }
     }
     ul{
+        list-style: disc;
         li{
+            line-height: 1.5em;
+
             &:before{
                 
             };
@@ -67,6 +73,16 @@
     }
     blockquote{
         font-style: italic;
-        padding: 2em 0 2em 2em;
+        padding: .5em 3em;
+    }
+    pre{
+        line-height: 1.2em;
+        font-size: 1.1em;
+        font-family: "Courier New", Courier, monospace;
+        margin: .5 0;
+        padding-left: 2em;
+    }
+    code{
+
     }
 }
