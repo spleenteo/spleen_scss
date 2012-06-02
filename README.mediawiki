@@ -1,37 +1,23 @@
 = SpleenScss =
 
-Questa libreria permette di scrivere il markup html applicando le classi di un sistema grid css. Si ispira al famoso '''960grid'''. E' stata modificata la metafora delle container/grid di 960grid in favore di una hive/cells (alveare/cella) essendo questo sistema più flessibile e adattabile a varie esigenze.
+This is a set of scss, html, js, slim, sass
+There's a demo file just to show a couple of things.
 
-Questo insieme di file scss/css/html/haml/js nasce per agevolare l'inizio di un nuovo sito facilitandone la scrittura del markup e sfruttando al potenza e la pulizia dell'scss (http://sass-lang.com/).
-Prende spunto dal sistema 960grid e 960grid fluid. Questi sono stati accorpati e convertiti in formato scss e sono stati parametrizzati in modo tale da poter scegliere alcuni attributi.
+== The command line for sass ==
 
-=== Attributi ===
-* la dimensione fissa in px (non solo 960px)
-* il margine tra una colonna e l'altra che può essere diverso da 10px
-* la scelta tra un sistema fisso oppure fludio con una percentuale variabile
-* l'adatamento automatico della struttura per i dispositivi mobili come tablet, smartphone ecc.
+The command line for the scss interpreter is:
 
+ $> sass -C -t compact --watch [the/scss/main/directory/path]:[your/website/css/directory]
 
+== The filesystem ==
 
+When you clone this project you'll find two differents folders:
 
-
-
-This is a set of scss files to finally create a single basic style.css file for a new design project.
-you can begin with a good base
-
-to use it, you nedd to install the ruby gem named "haml" in your system.
-
-the command to the scss interpreter is:
-
-$> sass -C -t compact --watch [the/scss/main/directory/path]:[your/website/css/directory]
-
-When you clone this project you'll find tw differents folders:
-
-spleen_scss/
-  |--css/
-  |--scss/
+ spleen_scss/
+   |--css/
+   |--scss/
   
-So, the final command to work within this space qill be:
+So, the final command to work within this space will be:
 
 $> cd [spleen_scss/directory/path]
 $> sass -C -t compact --watch scss/:css/
