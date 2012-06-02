@@ -15,12 +15,16 @@
 
 .clearfix { display: block; }
 
-body { font-family: "lucida grande", Tahoma, Verdana; font-size: 0.7em; color: #403d3d; }
+/* define here your colors' palette variables are defined with a "c" prefix to better understand that you refer to a color var I usualy use variables to define colors and then other variable for the section I want to be colored with. Even if it could sounds like a repetition, i think its That's a good compromise to change colors to section without compromise other things */
+/*
+$cLink: $cOrange;
+$cTitles: $cBlue;
+$cSectionBox: $cGreyLight;
+*/
+body { font-family: "lucida grande", Tahoma, Verdana; font-size: 0.7em; color: #3d3d3d; }
 body header h1 { font-size: 2em; padding: 5px 0; margin-bottom: 10px; }
 body nav ul li { display: inline-block; margin-right: 20px; }
-body article { line-height: 1.4em; }
-body article ul { margin: 10px; padding-left: 20px; }
-body article ul li { padding: 5px 5px 5px 15px; list-style: circle; }
+body article { border: 1px solid #11abf3; padding: 10px; }
 
 header, nav, section, article, aside { background-color: #eee; padding: 10px; border: 1px solid #ccc; margin-top: 10px; }
 

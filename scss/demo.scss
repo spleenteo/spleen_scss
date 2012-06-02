@@ -1,8 +1,9 @@
 @import "commons";
+@import "colors";
 body{
     font-family: "lucida grande", Tahoma, Verdana;
     font-size: 0.7em;
-    color: #403d3d;
+    color: $cGrayDark;
     
     header{
         h1{
@@ -20,15 +21,9 @@ body{
         }
     }
     article{
-        line-height: 1.4em;
-        ul{
-            margin: 10px;
-            padding-left: 20px;
-            li{
-                padding: 5px 5px 5px 15px;
-                list-style: circle;
-            }
-        }
+        border: 1px solid $cCyan;
+        padding: 10px;
+
     }
 }
 header, nav, section, article, aside{
