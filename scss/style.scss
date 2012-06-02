@@ -1,34 +1,25 @@
-@import "spleen";       // the spleenscss library
 @import "commons";      // common mixin and classes
 @import "colors";       // the main color palette
-@import "mq_debug";     // the media queries debug library
+
+/* DEFINE YOUR GENERIC STYLE FOR TAGS */
+
+/****************************************************************************/
 
 
-// let's start your new clean stylesheet!
-/* GENERIC STYLED FOR OUTLINE AND VERY OLD BROWSERS */
-/**********************************/
+/* DEFINE THE STRUCTURE OF YOUR BASIC TEMPLATE AND BODY */
 
-/* END GENERIC STYLED FOR OUTLINE AND VERY OLD BROWSERS  */
+/****************************************************************************/
 
 
-/* MEDIA QUERIES STATEMENTS */
-/*********************************
-** THE ULTIMATE RESPONSIVE TABLE
-** Project on GitHub: https://github.com/spleenteo/spleen_scss
-** Author: Matteo Papadopoulos (@spleenteo) http://www.basictrading.biz
-** This a "14 media queries breaks empty template" for different devices and browsers viewports
-** Talking about devices we have no standard sizes.
-** The references points for tablets and smartphone we adopted are Apple devices, iPhone (320x640) and iPad (720x1024)
-** but these queries are usefull for all kind of devices and sizes.
-** We intend "ipad landscape" and "desktop" viewports (the cononical 960px width) as a same size
-**
-** "Responsive" works if it goes from small to big; in CSS "to add" it's easier then "to remove" so
-** it's IMPORTANT to DON'T CHANGE the order of the queries that are ready for
-** 1 - Smaller then
-** 2 - Between Sizes
-** 3 - Bigger then
-** 4 - Exact size
-*/
+/* DEFINE COMMONS PART OF THE SITE
+ * all these style should be well visibile in portrait smartphones and even on ie6!
+ * suggestion: try to only describe objects without specifications as sizes, margin ecc
+ * since you are sure they are fixed. you can add those attributes in the specific moduls file.
+ */
+
+
+/****************************************************************************/
+
 
 /* SMALLER THAN */
 /****************************************************************************/
