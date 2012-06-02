@@ -10,5 +10,6 @@ function toggler_setup(jq) {
 
 
 $(document).ready(function() {
-    toggler_setup();    
+    toggler_setup();
+       
 });
