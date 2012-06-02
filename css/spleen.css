@@ -14,13 +14,8 @@
 /* here some generic classes these classes can be used in html markup */
 .debug { border: 1px solid red; }
 
+.clearfix { display: block; height: 1%; }
 .clearfix:after { clear: both; content: ' '; display: block; font-size: 0; line-height: 0; visibility: hidden; width: 0; height: 0; }
-
-.clearfix { display: inline-block; }
-
-* html.clearfix { height: 1%; }
-
-.clearfix { display: block; }
 
 @font-face { font-family: 'special'; src: url("fonts/Georgia.eot"); src: local("Georgia"), url("fonts/Georgia.ttf") format("truetype"); }
 
@@ -100,13 +95,8 @@ $cSectionBox: $cGreyLight;
 /* here some generic classes these classes can be used in html markup */
 .debug { border: 1px solid red; }
 
+.clearfix { display: block; height: 1%; }
 .clearfix:after { clear: both; content: ' '; display: block; font-size: 0; line-height: 0; visibility: hidden; width: 0; height: 0; }
-
-.clearfix { display: inline-block; }
-
-* html.clearfix { height: 1%; }
-
-.clearfix { display: block; }
 
 .cms { font-size: 1em; line-height: 1.5em; }
 .cms h1, .cms h2, .cms h3, .cms h4, .cms h5 { margin: .5em 0 .5em 0; }
