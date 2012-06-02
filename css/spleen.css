@@ -202,8 +202,12 @@ form fieldset .inline { display: inline; }
 form fieldset .short { width: 30%; }
 form fieldset .medium { width: 45%; }
 
-.cms { font-size: 1em; line-height: 1.3em; }
+.debug { border: 1px solid red; }
+
+.bg_reset { background-repeat: no-repeat; background-color: transparent; background-position: top left; }
+
+.cms { font-size: 1em; line-height: 1.5em; }
 .cms h1 span, .cms h2 span, .cms h3 span, .cms h4 span, .cms h5 span { display: none; }
 .cms p img { margin: 5px 5px 5px 0; }
 .cms p img.right { float: right; margin: 5px 0 5px 5px; }
-.cms blockquote { font-style: italic; }
+.cms blockquote { font-style: italic; padding: 2em 0 2em 2em; }

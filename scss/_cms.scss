@@ -1,8 +1,9 @@
-@import "colors"; // the main color palette
+@import "colors";   // the main color palette
+@import "commons";  // the main color palette
 
 .cms{
     font-size: 1em;
-    line-height: 1.3em;
+    line-height: 1.5em;
     h1, h2, h3, h4, h5{
         span{
             display: none;
@@ -66,5 +67,6 @@
     }
     blockquote{
         font-style: italic;
+        padding: 2em 0 2em 2em;
     }
 }
