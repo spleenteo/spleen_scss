@@ -1,6 +1,19 @@
+/* SPLEENCSS COMMONS contains mixins, extentions and generic classes */
+/* classes to be used es extentions with @extend [class_name] the EXT_ prefix will help ti make css code more readable Extensions should be used in scss/sass file only, not in the markup */
+.EXT_border_reset { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+
+.EXT_bg_reset { background-repeat: no-repeat; background-color: transparent; background-position: top left; }
+
+/* here some generic classes these classes can be used in html markup */
 .debug { border: 1px solid red; }
 
-.bg_reset { background-repeat: no-repeat; background-color: transparent; background-position: top left; }
+.clearfix:after { clear: both; content: ' '; display: block; font-size: 0; line-height: 0; visibility: hidden; width: 0; height: 0; }
+
+.clearfix { display: inline-block; }
+
+* html.clearfix { height: 1%; }
+
+.clearfix { display: block; }
 
 body { font-family: "lucida grande", Tahoma, Verdana; font-size: 0.7em; color: #403d3d; }
 body header h1 { font-size: 2em; padding: 5px 0; margin-bottom: 10px; }

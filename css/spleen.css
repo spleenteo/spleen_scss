@@ -1,9 +1,22 @@
 /* SPLEEN SCSS LIBRARY */
 /* created by spleenteo http://www.basictrading.biz */
 /********************************************/
+/* SPLEENCSS COMMONS contains mixins, extentions and generic classes */
+/* classes to be used es extentions with @extend [class_name] the EXT_ prefix will help ti make css code more readable Extensions should be used in scss/sass file only, not in the markup */
+.EXT_border_reset { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+
+.EXT_bg_reset { background-repeat: no-repeat; background-color: transparent; background-position: top left; }
+
+/* here some generic classes these classes can be used in html markup */
 .debug { border: 1px solid red; }
 
-.bg_reset { background-repeat: no-repeat; background-color: transparent; background-position: top left; }
+.clearfix:after { clear: both; content: ' '; display: block; font-size: 0; line-height: 0; visibility: hidden; width: 0; height: 0; }
+
+.clearfix { display: inline-block; }
+
+* html.clearfix { height: 1%; }
+
+.clearfix { display: block; }
 
 @font-face { font-family: 'special'; src: url("fonts/Georgia.eot"); src: local("Georgia"), url("fonts/Georgia.ttf") format("truetype"); }
 
@@ -33,7 +46,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* GENERIC CLASSES */
 .special_font { font-family: special; font-smooth: always; font-weight: 400; }
 
-.spleen_lib_verify:before { border: 5px solid black; content: "SPLEEN SCSS LIBRARY IS WORKING!"; color: white; text-shadow: #000 1px 1px 5px; font-size: 3em; font-family: verdana; font-weight: bold; margin: 10px; padding: 10px; display: block; background-image: url("http://basictrading.biz/download/git/spleen_scss/spleen_stripe.png"); -moz-border-radius: 10px 10px 10px 10px; /* FF1+ */ -webkit-border-radius: 10px 10px 10px 10px; /* Saf3+, Chrome */ border-radius: 10px 10px 10px 10px; /* Opera 10.5, IE 9 */ behavior: url("/css/PIE.htc"); text-align: center; }
+.spleen_lib_verify:before { border: 5px solid black; content: "SPLEEN SCSS LIBRARY IS WORKING!"; color: white; text-shadow: #000 1px 1px 5px; font-size: 3em; font-family: verdana; font-weight: bold; margin: 10px; padding: 10px; display: block; background-image: url("http://basictrading.biz/download/git/spleen_scss/spleen_stripe.png"); -moz-border-radius: 10px 10px 10px 10px; -webkit-border-radius: 10px 10px 10px 10px; border-radius: 10px 10px 10px 10px; text-align: center; }
 
 /* DEFAULT BODY */
 body strong { font-weight: 600; }
@@ -185,6 +198,12 @@ table thead tr th.long { width: 60%; }
 table .center { text-align: center; }
 table .right { text-align: right; }
 
+/* define here your colors' palette variables are defined with a "c" prefix to better understand that you refer to a color var I usualy use variables to define colors and then other variable for the section I want to be colored with. Even if it could sounds like a repetition, i think its That's a good compromise to change colors to section without compromise other things */
+/*
+$cLink: $cOrange;
+$cTitles: $cBlue;
+$cSectionBox: $cGreyLight;
+*/
 /* BASIC FORMS STYLE */
 /*********************/
 form fieldset label span { display: none; }
@@ -202,9 +221,28 @@ form fieldset .inline { display: inline; }
 form fieldset .short { width: 30%; }
 form fieldset .medium { width: 45%; }
 
+/* define here your colors' palette variables are defined with a "c" prefix to better understand that you refer to a color var I usualy use variables to define colors and then other variable for the section I want to be colored with. Even if it could sounds like a repetition, i think its That's a good compromise to change colors to section without compromise other things */
+/*
+$cLink: $cOrange;
+$cTitles: $cBlue;
+$cSectionBox: $cGreyLight;
+*/
+/* SPLEENCSS COMMONS contains mixins, extentions and generic classes */
+/* classes to be used es extentions with @extend [class_name] the EXT_ prefix will help ti make css code more readable Extensions should be used in scss/sass file only, not in the markup */
+.EXT_border_reset { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+
+.EXT_bg_reset { background-repeat: no-repeat; background-color: transparent; background-position: top left; }
+
+/* here some generic classes these classes can be used in html markup */
 .debug { border: 1px solid red; }
 
-.bg_reset { background-repeat: no-repeat; background-color: transparent; background-position: top left; }
+.clearfix:after { clear: both; content: ' '; display: block; font-size: 0; line-height: 0; visibility: hidden; width: 0; height: 0; }
+
+.clearfix { display: inline-block; }
+
+* html.clearfix { height: 1%; }
+
+.clearfix { display: block; }
 
 .cms { font-size: 1em; line-height: 1.5em; }
 .cms h1 span, .cms h2 span, .cms h3 span, .cms h4 span, .cms h5 span { display: none; }
